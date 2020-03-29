@@ -1,0 +1,30 @@
+version: "3"
+services:
+    senbike-api:
+        image: senbike-api
+        container_name: senbike-api
+        ports: 
+            - ${SERVICE_PORT}
+        depends_on: 
+            - dbpostgres
+        build: .
+        working_dir: /tmp
+        volumes: 
+            - .:/tmp
+        command: mvn clean spring-boot:run
+
+    dbpostgres:
+        image:  postgres
+        container_name: postgres
+        ports:
+            - ${DB_PORT}
+        environment:
+            - POSTGRES_PASSWORD=${PG_PASSWORD}
+            - POSTGRES_DB=${PG_DB}
+            - POSTGRES_USER=${PG_USER}
+
+
+            
+ 
+    
+
