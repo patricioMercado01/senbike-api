@@ -35,14 +35,14 @@ public class BicicleteroController{
         return bicicleteroService.getBicicletero(bicicleteroId);
     }
 
+    @RequestMapping(value="/bicicletero/{bicicleteroId}", method= RequestMethod.DELETE)
+    public void deleteBiciletero(@PathVariable long bicicleteroId){
+        bicicleteroService.deleteBicicletero(bicicleteroId);
+    }
+
     @RequestMapping(value="/bicicletero/{bicicleteroId}/espacios", method= RequestMethod.GET)
     public int getNumEspaciosBicicletero(@PathVariable long bicicleteroId){
         return bicicleteroService.numDisponible(bicicleteroId);
-    }
-
-    @RequestMapping(value="/bicicletero/{bicicleteroId}/espacios-disponibles", method= RequestMethod.GET)
-    public int[] getEspaciosDisponiblesBicicletero(@PathVariable long bicicleteroId){
-        return bicicleteroService.espaciosDisponibles(bicicleteroId);
     }
 
     @RequestMapping(value="/bicicletero/{bicicleteroId}/buscar/{tuiId}", method= RequestMethod.GET)

@@ -12,14 +12,14 @@ public class Bike {
     @Column(name = "ingreso")
     private String ingreso;
     @Column(name = "salida")
-    private String salida;
+	private String salida;
+	@Column(name = "espacio_designado", nullable = false)
+	private int espacioDesignado;
 
 	@ManyToOne
 	@JoinColumn(name = "bicicletero_id",nullable = false)
-    private Bicicletero bicicletero;
-
+	private Bicicletero bicicletero;
 	
-
 	public void setBicicletero(Bicicletero bicicletero) {
 		this.bicicletero = bicicletero;
     }
@@ -56,7 +56,17 @@ public class Bike {
 		this.salida = salida;
 	}
 
+	public int getEspacioDesignado() {
+		return espacioDesignado;
+	}
+
+	public void setEspacioDesignado(int espacioDesignado) {
+		this.espacioDesignado = espacioDesignado;
+	}
+
 	public Bike() {
 	}
+
+
     
 }

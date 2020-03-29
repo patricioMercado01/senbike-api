@@ -53,6 +53,10 @@ public class BicicleteroService{
 
     //Restorna los lugares en los que hay espacios disponibles
     public int[] espaciosDisponibles(long bicicleteroId){
-        return bicicleteroDao.findById(bicicleteroId).get().getEspaciosLibre();
+        return bicicleteroDao.findById(bicicleteroId).get().mostrarEspaciosLibres();
+    }
+    
+    public void deleteBicicletero(long bicicleteroId){
+        bicicleteroDao.deleteById(bicicleteroId);
     }
 }

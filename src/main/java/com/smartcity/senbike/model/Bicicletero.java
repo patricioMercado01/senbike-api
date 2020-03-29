@@ -23,10 +23,6 @@ public class Bicicletero{
     @OneToMany(mappedBy =  "bicicletero")
     private List<Bike> bikes;
 
-	public long getBicicletero_id() {
-		return bicicleteroId;
-	}
-
 	public void setBicicleteroId(long bicicleteroId) {
 		this.bicicleteroId = bicicleteroId;
     }
@@ -46,13 +42,15 @@ public class Bicicletero{
     }
 
     //Retorna lista de espacios diponibles
-    public int[] getEspaciosLibre(){
+    public int[] mostrarEspaciosLibres(){
         int[] espaciosDisponibles = new int[calcularEspaciosDisponibles()];
+        int espacioAux = 0;
         for(int i = 0; i<= espacios;i++){
             if(i +1 == bikes.get(i).getEspacioDesignado()){
                 //si se cumple la función me dice que el espacio actual se encuentra ocupado
             }else{
-                espaciosDisponibles[i] = i+1;
+                espaciosDisponibles[espacioAux]=(i+1);
+                espacioAux++;
             }
         }
         return espaciosDisponibles;
