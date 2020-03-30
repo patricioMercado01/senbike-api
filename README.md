@@ -4,10 +4,10 @@
  
 ## ***server:puerto/bicicletero***
 
-
 > **GET** \
 >Lista todos los bicicleteros.
-**POST** \
+
+>**POST** \
 >Agrega un bicicletero.
 ```sh
 {
