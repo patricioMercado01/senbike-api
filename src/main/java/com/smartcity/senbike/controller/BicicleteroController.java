@@ -3,7 +3,6 @@ package com.smartcity.senbike.controller;
 import java.util.List;
 
 import com.smartcity.senbike.model.Bicicletero;
-
 import com.smartcity.senbike.service.BicicleteroService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,4 +53,6 @@ public class BicicleteroController{
     public  List<Bicicletero> getBicicleteros(){
         return bicicleteroService.getBicicleteros();
     }
+
+
 }

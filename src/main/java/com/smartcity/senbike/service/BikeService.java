@@ -46,6 +46,5 @@ public class BikeService{
     public Bike getBike (long bikeId){
         return bikeDao.findById(bikeId).get();
     }
-
  
 }

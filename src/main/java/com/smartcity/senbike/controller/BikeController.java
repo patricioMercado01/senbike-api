@@ -34,6 +34,11 @@ public class BikeController{
         return bikeAux;
     }
 
+    @RequestMapping(value ="/bicicletero/{bicicleteroId}/bike/{bikeId}", method = RequestMethod.GET)
+    public Bike getBicicleta(@PathVariable long bikeId){
+        return bikeService.getBike(bikeId);
+    }
+
     @RequestMapping(value ="/bicicletero/{bicicleteroId}/bike", method = RequestMethod.POST)
     public String addBike(@PathVariable long bicicleteroId, @RequestBody Bike bike){
         bike.setBicicletero(new Bicicletero(bicicleteroId));
