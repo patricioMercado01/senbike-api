@@ -23,24 +23,24 @@ public class BikeController{
     private BikeService  bikeService;
     
     @RequestMapping(value ="/bicicletero/{bicicleteroId}/bike", method = RequestMethod.GET)
-    public List<Bike> getBicicletas(@PathVariable long bicicleteroId){
+    public List<Bike> getBicicletas(@PathVariable int bicicleteroId){
         return bikeService.getBikes(bicicleteroId);
     }
     
     @RequestMapping(value ="/bicicletero/{bicicleteroId}/bike/{bikeId}", method = RequestMethod.DELETE)
-    public Bike retirarBike(@PathVariable long bikeId ){
+    public Bike retirarBike(@PathVariable int bikeId ){
         Bike bikeAux = bikeService.exitBike(bikeId);
         bikeService.removeBike(bikeId);
         return bikeAux;
     }
 
     @RequestMapping(value ="/bicicletero/{bicicleteroId}/bike/{bikeId}", method = RequestMethod.GET)
-    public Bike getBicicleta(@PathVariable long bikeId){
+    public Bike getBicicleta(@PathVariable int bikeId){
         return bikeService.getBike(bikeId);
     }
 
     @RequestMapping(value ="/bicicletero/{bicicleteroId}/bike", method = RequestMethod.POST)
-    public String addBike(@PathVariable long bicicleteroId, @RequestBody Bike bike){
+    public String addBike(@PathVariable int bicicleteroId, @RequestBody Bike bike){
         bike.setBicicletero(new Bicicletero(bicicleteroId));
         bike.setIngreso(new Date().toString());
         bikeService.addBike(bike);

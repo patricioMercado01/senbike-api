@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Bike {
     @Id
     @Column(name = "tui_id")
-    private long tuiId;
+    private int tuiId;
     @Column(name = "ingreso")
     private String ingreso;
     @Column(name = "salida")
@@ -32,11 +32,11 @@ public class Bike {
         return this.bicicletero;
     }
 
-	public long getTuiId() {
+	public int getTuiId() {
 		return tuiId;
 	}
 
-	public void setTuiId(long tuiId) {
+	public void setTuiId(int tuiId) {
 		this.tuiId = tuiId;
 	}
 

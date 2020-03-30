@@ -30,22 +30,22 @@ public class BicicleteroController{
     }
 
     @RequestMapping(value="/bicicletero/{bicicleteroId}", method= RequestMethod.GET)
-    public Bicicletero getBiciletero(@PathVariable long bicicleteroId){
+    public Bicicletero getBiciletero(@PathVariable int bicicleteroId){
         return bicicleteroService.getBicicletero(bicicleteroId);
     }
 
     @RequestMapping(value="/bicicletero/{bicicleteroId}", method= RequestMethod.DELETE)
-    public void deleteBiciletero(@PathVariable long bicicleteroId){
+    public void deleteBiciletero(@PathVariable int bicicleteroId){
         bicicleteroService.deleteBicicletero(bicicleteroId);
     }
 
     @RequestMapping(value="/bicicletero/{bicicleteroId}/espacios", method= RequestMethod.GET)
-    public int getNumEspaciosBicicletero(@PathVariable long bicicleteroId){
+    public int getNumEspaciosBicicletero(@PathVariable int bicicleteroId){
         return bicicleteroService.numDisponible(bicicleteroId);
     }
 
     @RequestMapping(value="/bicicletero/{bicicleteroId}/buscar/{tuiId}", method= RequestMethod.GET)
-    public boolean findBike(@PathVariable long bicicleteroId, @PathVariable long tuiId){
+    public boolean findBike(@PathVariable int bicicleteroId, @PathVariable int tuiId){
         return bicicleteroService.findBike(tuiId,bicicleteroId);
     }
 

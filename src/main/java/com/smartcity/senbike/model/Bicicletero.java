@@ -41,20 +41,6 @@ public class Bicicletero{
         return espacios - bikes.size();
     }
 
-    //Retorna lista de espacios diponibles
-    public int[] mostrarEspaciosLibres(){
-        int[] espaciosDisponibles = new int[calcularEspaciosDisponibles()];
-        int espacioAux = 0;
-        for(int i = 0; i<= espacios;i++){
-            if(i +1 == bikes.get(i).getEspacioDesignado()){
-                //si se cumple la función me dice que el espacio actual se encuentra ocupado
-            }else{
-                espaciosDisponibles[espacioAux]=(i+1);
-                espacioAux++;
-            }
-        }
-        return espaciosDisponibles;
-    }
 
     public int getEspacios(){
         return espacios;

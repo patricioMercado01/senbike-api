@@ -14,13 +14,13 @@ public class BikeService{
 
     @Autowired
     private BikeDao  bikeDao;
-    public Bike exitBike(long bikeId){
+    public Bike exitBike(int bikeId){
         Bike bikeAux = bikeDao.findById(bikeId).get();
         bikeAux.setSalida();
         return bikeAux;
     }
 
-    public List<Bike> getBikes(long bicicleteroId){
+    public List<Bike> getBikes(int bicicleteroId){
         List<Bike> bikes = new  ArrayList<>();
         bikeDao.findByBicicleteroBicicleteroId(bicicleteroId).forEach(bikes::add);
         return bikes;
@@ -39,11 +39,11 @@ public class BikeService{
         }
     }
 
-    public void removeBike(long bikeId){
+    public void removeBike(int bikeId){
         bikeDao.deleteById(bikeId);
     }
 
-    public Bike getBike (long bikeId){
+    public Bike getBike (int bikeId){
         return bikeDao.findById(bikeId).get();
     }
  

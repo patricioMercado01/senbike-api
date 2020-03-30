@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 
 @Transactional
 @Repository
-public interface BikeDao extends CrudRepository<Bike, Long>{
-    public List<Bike> findByBicicleteroBicicleteroId(long bicicleteroId);
+public interface BikeDao extends CrudRepository<Bike, Integer>{
+    public List<Bike> findByBicicleteroBicicleteroId(int bicicleteroId);
 }

@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Transactional
 @Repository
-public interface BicicleteroDao extends CrudRepository<Bicicletero, Long>{
+public interface BicicleteroDao extends CrudRepository<Bicicletero, Integer>{
 }

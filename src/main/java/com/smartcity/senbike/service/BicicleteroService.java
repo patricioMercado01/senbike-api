@@ -19,7 +19,7 @@ public class BicicleteroService{
         bicicleteroDao.save(bicicletero);
     }
 
-    public Bicicletero getBicicletero(long bicicleteroId){
+    public Bicicletero getBicicletero(int bicicleteroId){
         return bicicleteroDao.findById(bicicleteroId).get();
     }
 
@@ -29,7 +29,7 @@ public class BicicleteroService{
         return bicicletero;
     }
 
-    public void removeBicicletero(long bicicleteroId){
+    public void removeBicicletero(int bicicleteroId){
         bicicleteroDao.deleteById(bicicleteroId);
     }
 
@@ -38,20 +38,20 @@ public class BicicleteroService{
     }
 
     //Busca si existe espacio disponible en e bicicletero
-    public boolean espacioDisponibles(long bicicleteroId){
+    public boolean espacioDisponibles(int bicicleteroId){
         Bicicletero bicicleteroAux = bicicleteroDao.findById(bicicleteroId).get();
         return bicicleteroAux.existenciaEspacioDisponible();
     }   
 
-    public int numDisponible(long bicicleteroId){
+    public int numDisponible(int bicicleteroId){
         return bicicleteroDao.findById(bicicleteroId).get().calcularEspaciosDisponibles();
     }
 
-    public boolean findBike(long tuiId, long bicicleteroId){
+    public boolean findBike(int tuiId, int bicicleteroId){
         return bicicleteroDao.findById(bicicleteroId).get().findBike(tuiId);
     }
     
-    public void deleteBicicletero(long bicicleteroId){
+    public void deleteBicicletero(int bicicleteroId){
         bicicleteroDao.deleteById(bicicleteroId);
     }
 }
