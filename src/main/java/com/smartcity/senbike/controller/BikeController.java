@@ -45,20 +45,14 @@ public class BikeController{
         bikeIn.setIngreso(new Date().toString());
         List<Bike> bicicletasGuardadas =  bikeService.getBikes(bicicleteroId);
         bikeService.addBike(bikeIn);
-        
-        //el primer if revisa si existe espacio disponible, 
-        //el segundo si el puesto se encuentra ocupado
-        if(bikeService.buscarEspacioDisponible(bikeService.getBike(bikeIn.getTuiId()))){            
-            bikeService.removeBike(bikeIn.getTuiId());
-            if(bicicletasGuardadas.stream().anyMatch(bike -> bike.getEspacioDesignado() == bikeIn.getEspacioDesignado())){
-                return "Espacio ocupado, no se pudo guardar bicicleta" ;
-            }else{
-                bikeService.addBike(bikeIn);
-                return "Bicicleta guardada";
-            }
+        //primer if verifica si existen espacios vacios y que el puesto se encuentre libre
+        //segundo verifica si el usuario ya está ingresado (1 usuario = 1 bicicleta)
+        if(bikeService.buscarEspacioDisponible(bikeService.getBike(bikeIn.getTuiId())) && !bicicletasGuardadas.stream().anyMatch(bike -> bike.getEspacioDesignado() == bikeIn.getEspacioDesignado())){            
+            return "Bicicleta guardada";
         }else{
-            bikeService.removeBike(bikeIn.getTuiId());
-            return "No hay espacio diponible";
+            if(!bicicletasGuardadas.stream().anyMatch(bike -> bike.getTuiId() == bikeIn.getTuiId()))
+                bikeService.removeBike(bikeIn.getTuiId());
+            return "No se pudo guardar bicicleta";
         }
     }
 }
