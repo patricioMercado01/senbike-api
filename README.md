@@ -32,8 +32,8 @@
   
 ## ***server:puerto/bicicletero/{bicicleteroId}/buscar/{tuiId}***
 > **GET** \
-> Busca en el bicicletero con la id del bicicletero ingresada, la existencia de una bicicleta,
- la bicicleta que se busca debe poseer la identificación de la tarjeta tui que fue ingresada. 
+> Busca en el bicicletero con la id del bicicletero ingresada, la existencia de una bicicleta.
+ La bicicleta que se busca debe poseer la identificación de la tarjeta tui que fue ingresada. 
  Si la bicicleta se encuentra en la base de datos, se retorna TRUE, en caso contrario FALSE
 
 # BIKE
