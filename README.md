@@ -6,9 +6,9 @@
 
 
 > **GET** \
->Lista todos los bicicleteros
+>Lista todos los bicicleteros.
 **POST** \
->Agrega un bicicletero, 
+>Agrega un bicicletero.
 ```sh
 {
     "bicicleteroId": <long>,
@@ -20,28 +20,28 @@
 ## ***server:puerto/bicicletero/{bicicleteroId}***
 
 > **GET** \
-> Retorna el bicicletero con el id ingresado
+> Retorna el bicicletero con el id ingresado.
 
 > **DELETE** \
-> Elimina el bicicletero con el id ingresado
+> Elimina el bicicletero con el id ingresado.
 
 ## server:puerto/bicicletero/{bicicleteroId}/espacios
 
 > **GET** \
-> Retorna el numero de espacios vacios
+> Retorna el numero de espacios vacios.
   
 ## ***server:puerto/bicicletero/{bicicleteroId}/buscar/{tuiId}***
 > **GET** \
 > Busca en el bicicletero con la id del bicicletero ingresada, la existencia de una bicicleta.
- La bicicleta que se busca debe poseer la identificación de la tarjeta tui que fue ingresada. 
- Si la bicicleta se encuentra en la base de datos, se retorna TRUE, en caso contrario FALSE
+ La bicicleta que se busca debe poseer el id de la tarjeta tui que fue ingresada. 
+ Si la bicicleta se encuentra en la base de datos, se retorna TRUE, en caso contrario FALSE.
 
 # BIKE
  
 ## ***server:puerto/bicicletero/{bicicleteroId}/bike***
 
 > **GET** \
->Retorna todas las bicicletas que esten asociadas al id del bicicletero
+>Retorna todas las bicicletas que esten asociadas al id del bicicletero.
 
 > **POST** \
 >   Agrega una bicicleta. 
@@ -58,9 +58,9 @@
  ## ***server:puerto/bicicletero/{bicicleteroId}/bike/{tuiId}***
  
 > **DELETE** \
-> Elimina la bicicleta con el id ingresado
+> Elimina la bicicleta con el id ingresado.
 
 > **GET** \
-> Retorna la bicicleta con el con id ingresado
+> Retorna la bicicleta con el con id ingresado.
 
 
