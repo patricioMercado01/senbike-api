@@ -5,9 +5,9 @@
 ### ***server:puerto/bicicletero***
 
 
-> **GET**
+> **GET** \
 >Lista todos los bicicleteros
-**POST**
+**POST** \
 >Agrega un bicicletero, 
 ```sh
 {
@@ -19,15 +19,15 @@
  
 ### ***server:puerto/bicicletero/{bicicleteroId}***
 
-> **GET**
+> **GET** \
 > Retorna el bicicletero con el id ingresado
 
-> **DELETE**
+> **DELETE** \
 > Elimina el bicicletero con el id ingresado
 
 ### server:puerto/bicicletero/{bicicleteroId}/espacios
 
-> **GET**
+> **GET** \
 > Retorna el numero de espacios vacios
   
 ### ***server:puerto/bicicletero/{bicicleteroId}/buscar/{tuiId}***
@@ -40,14 +40,14 @@
  
 ## ***server:puerto/bicicletero/{bicicleteroId}/bike***
 
-> **GET**
+> **GET** \
 >Retorna todas las bicicletas que esten asociadas al id del bicicletero
 
-> **POST**
+> **POST** \
 >   Agrega una bicicleta. 
-> -No se pueden agregar mas bicicletas que el numero de espacios asignado al bicicletero.
-> -No se puede agregar bicicleta a un espacio ya ocupado.
-> -No se puede agregar mas de una bicicleta con una tui (1 TUI = 1 Bicicleta).
+> - No se pueden agregar mas bicicletas que el numero de espacios asignado al bicicletero.
+> - No se puede agregar bicicleta a un espacio ya ocupado.
+> - No se puede agregar mas de una bicicleta con una tui (1 TUI = 1 Bicicleta).
 ```sh
 {
     "tuiId": <long>,
@@ -57,10 +57,10 @@
 
  ## ***server:puerto/bicicletero/{bicicleteroId}/bike/{tuiId}***
  
-> **DELETE** 
+> **DELETE** \
 > Elimina la bicicleta con el id ingresado
 
-> **GET**
+> **GET** \
 > Retorna la bicicleta con el con id ingresado
 
 
