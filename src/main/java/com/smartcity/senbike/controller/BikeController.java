@@ -40,14 +40,18 @@ public class BikeController{
     }
 
     @RequestMapping(value ="/bicicletero/{bicicleteroId}/bike", method = RequestMethod.POST)
-    public String addBike(@PathVariable int bicicleteroId, @RequestBody Bike bike){
-        bike.setBicicletero(new Bicicletero(bicicleteroId));
-        bike.setIngreso(new Date().toString());
-        bikeService.addBike(bike);
-        if(bikeService.addBikeToBicicletero(bikeService.getBike(bike.getTuiId()))){
-            return "Bicicleta guardada";
+    public String addBike(@PathVariable int bicicleteroId, @RequestBody Bike bikeIn){
+        bikeIn.setBicicletero(new Bicicletero(bicicleteroId));
+        bikeIn.setIngreso(new Date().toString());
+        bikeService.addBike(bikeIn);
+        if(bikeService.buscarEspacioDisponible(bikeService.getBike(bikeIn.getTuiId()))){
+            if(bikeService.getBikes(bicicleteroId).stream().anyMatch(bike -> bike.getEspacioDesignado() == bikeIn.getEspacioDesignado())){
+                return "Espacio ocupado, no se pudo guardar bicicleta";
+            }else{
+                return "Bicicleta guardada";
+            }
         }else{
-            bikeService.removeBike(bike.getTuiId());
+            bikeService.removeBike(bikeIn.getTuiId());
             return "No hay espacio diponible";
         }
     }

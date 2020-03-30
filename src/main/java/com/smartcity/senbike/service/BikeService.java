@@ -30,7 +30,7 @@ public class BikeService{
         bikeDao.save(bike);
     }
 
-    public boolean addBikeToBicicletero(Bike bike){
+    public boolean buscarEspacioDisponible(Bike bike){
         boolean espacioDisponible = bike.getBicicletero().existenciaEspacioDisponible();
         if(espacioDisponible){
             return true;
