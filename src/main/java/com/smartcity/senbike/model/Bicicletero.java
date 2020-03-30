@@ -14,7 +14,7 @@ public class Bicicletero{
 
     @Id
     @Column(name = "bicicletero_id")
-    private long bicicleteroId;
+    private int bicicleteroId;
     @Column(name = "descripcion")
     private String descripcion;
     @Column(name = "espacios", nullable = false)
@@ -23,7 +23,7 @@ public class Bicicletero{
     @OneToMany(mappedBy =  "bicicletero")
     private List<Bike> bikes;
 
-	public void setBicicleteroId(long bicicleteroId) {
+	public void setBicicleteroId(int bicicleteroId) {
 		this.bicicleteroId = bicicleteroId;
     }
 
@@ -48,11 +48,11 @@ public class Bicicletero{
     public Bicicletero() {
     }
 
-    public Bicicletero(long bicicleteroId) {
+    public Bicicletero(int bicicleteroId) {
         this.bicicleteroId = bicicleteroId;
     }
 
-    public long getBicicleteroId() {
+    public int getBicicleteroId() {
         return bicicleteroId;
     }
 
@@ -73,7 +73,7 @@ public class Bicicletero{
         this.bikes = bikes;
     }
 
-    public boolean findBike(long tuiId){
+    public boolean findBike(int tuiId){
         return bikes.stream().anyMatch(bike -> bike.getTuiId() ==tuiId);
     }
 }
